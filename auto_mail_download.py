@@ -67,8 +67,8 @@ def get_attachment(msg,sub,file_list, file_dict,map_df):
     # d = test.strftime("%Y-%m-%d %H:%M:%S")
 
     d1 = datetime.datetime.today()
-    # d_today = d1.strftime("%Y-%m-%d %H:%M:%S")
-    d_today = d1
+    d_today = d1.strftime("%Y-%m-%d %H:%M:%S")
+    # d_today = d1
 
     last_updated_date_ = map_df["Updated_Date"][map_df["Subject_name"] == sub].reset_index(drop=True)[0]
     last_updated_date = pd.to_datetime(last_updated_date_)

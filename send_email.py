@@ -88,9 +88,9 @@ def send_Hnf(fl_name, today):
 
     # start TLS for security
     s.starttls()
-    # sender = "revseed@revnomix.com"
+    sender = "revseed@revnomix.com"
     # sender = 'Revnomix Revenue Management Services <revnomix.RMS@revnomix.com>'
-    sender = "yadnesh.kolhe@revnomix.com"
+    # sender = "yadnesh.kolhe@revnomix.com"
 
     # recipients = ['abhijeet.rode@revnomix.com','paritosh.palkar@revnomix.com','jigar.bhatt@revnomix.com']
     # recipients = eid_h.to_list()
@@ -110,8 +110,8 @@ def send_Hnf(fl_name, today):
 
     # msg['Cc'] = ' ,'.join([str(elem) for elem in recipients.split(',')[1:]])
     # Authentication
-    # s.login("revseed@revnomix.com", "Revenue@123")
-    s.login("yadnesh.kolhe@revnomix.com", "yadnesh@15")
+    s.login("revseed@revnomix.com", "Revenue@123")
+    # s.login("yadnesh.kolhe@revnomix.com", "yadnesh@15")
     s.sendmail(sender, recipients_to+recipients_cc, msg.as_string())
     # s.sendmail(sender,  recipients.split(','), msg.as_string())
     s.quit()
