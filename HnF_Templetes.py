@@ -48,9 +48,9 @@ def process_HNF(infile):
     data = data[~filter]
 
 ################# date range from today to next 365 days in dataframe ####################
-    data1 = pd.date_range(datetime.today(), periods=365)
-    data1= pd.DataFrame(data1)
-    data1 = data1.rename(columns={0: "Date"})      ##### comment on 7thjune2022
+    # data1 = pd.date_range(datetime.today(), periods=365)
+    # data1= pd.DataFrame(data1)
+    # data1 = data1.rename(columns={0: "Date"})      ##### comment on 7thjune2022
 
     try:
         data["Date"] = data["Date"].apply(lambda x: datetime.strptime(x, '%d-%b-%Y'))
@@ -58,10 +58,10 @@ def process_HNF(infile):
         data["Date"] = data["Date"].apply(lambda x: datetime.strptime(x, '%d/%m/%Y'))
 
     data["Date"] = data["Date"].dt.date
-    data1["Date"] = data1["Date"].dt.date
+    # data1["Date"] = data1["Date"].dt.date
 
 ############# merge the data with date range #############
-    data = data1.merge(data, how="left", on="Date")
+    # data = data1.merge(data, how="left", on="Date")
 
 ##########################################################
     data["Capacity"] = data["Capacity"].fillna(method="ffill")
